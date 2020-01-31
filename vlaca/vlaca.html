@@ -1,0 +1,396 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f35c6fae76.js"></script>
+
+    <script>
+        /* window.onscroll = function() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            scrollFunction()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        };
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        function scrollFunction() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            if (document.documentElement.scrollTop < 80 || document.documentElement.scrollTop < 80) {
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById("nav").style.background = "rgb(0,0,0,0)";
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } else {
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById("nav").style.backgroundColor = "black";
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }*/
+
+        function inn() {
+            document.getElementById("bar1").style.width = "20px";
+            document.getElementById("bar1").style.marginLeft = "5px";
+            document.getElementById("bar3").style.width = "20px";
+            document.getElementById("bar3").style.marginLeft = "5px";
+        }
+
+        function out() {
+            document.getElementById("bar1").style.width = "30px";
+            document.getElementById("bar1").style.marginLeft = "0px";
+            document.getElementById("bar3").style.width = "30px";
+            document.getElementById("bar3").style.marginLeft = "0px";
+        }
+
+        function navac() {
+            document.getElementById("mySidenav").style.width = "400px";
+            document.getElementById("nav").style.zIndex = 1;
+
+        }
+
+        function navkapa() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("nav").style.zIndex = 1;
+
+
+        }
+    </script>
+    <style>
+        .yazi {
+            font-size: 75px;
+            font-weight: lighter;
+            color: white;
+            margin-top: 190px;
+        }
+        
+        form button:hover {
+            background: black;
+            color: white;
+            border: 2px white solid;
+        }
+        
+        .resim:hover {
+            transition: .4s ease;
+            opacity: 0.4;
+            transform: scale(1.04);
+        }
+        
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 30px;
+            height: 3px;
+            background-color: rgb(231, 231, 231);
+            margin: 6px 0;
+            transition: 0.2s;
+        }
+        
+        .containeer {
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 60px;
+        }
+        
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <nav class="navbar sticky-top " id="nav" style="background: black;height: 80px;;">
+        <a class="navbar-brand text-white ml-4" href="#" style="font-weight: bold">S A R A H</a>
+        <div class="containeer mr-5" id="but" onclick="navac()" onmouseover="inn()" onmouseout="out()">
+            <div class="bar1" id="bar1"></div>
+            <div class="bar2" id="bar2"></div>
+            <div class="bar3" id="bar3"></div>
+        </div>
+    </nav>
+
+    <div class="container ">
+        <div id="mySidenav" class="sidenav">
+
+            <a href="javascript:void(0)" class="closebtn" onclick="navkapa()">&times;</a>
+            <a href="#" class="text-white" style="margin:80px 0 0 50px; font-size: 20px; font-weight: lighter">HOME</a>
+            <a href="#" class="text-white" style="margin:0 0 0 50px; font-size: 20px; font-weight: lighter">ABOUT ME</a>
+            <a href="#" class="text-white" style="margin:0 0 0 50px; font-size: 20px; font-weight: lighter">PORTFOLİO</a>
+            <a href="#" class="text-white" style="margin:0 0 0 50px; font-size: 20px; font-weight: lighter">TESTİMONİAL</a>
+            <a href="#" class="text-white" style="margin:0 0 0 50px; font-size: 20px; font-weight: lighter">CONTACT</a>
+        </div>
+    </div>
+    <div class="container-fluid" style=" background: url(images/bg.jpg); height:650px;">
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="yazi">S A R A H &nbsp;&nbsp;&nbsp;&nbsp;J O N S O N</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <p style="color: rgb(212, 198, 198);font-size: 30px; font-weight: lighter">I design creative and minimal websites</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid  h-100" style="background: black;">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-7 ">
+                    <div style="background:white;width:50px;height:2px;margin-top:11px; float: left;"></div> <span class="text-white" style="float:left;font-weight: lighter;">&nbsp; &nbsp;&nbsp;A B O U T &nbsp;M E</span>
+
+                    <br>
+                    <p style="font-size: 30px; color: rgb(221, 213, 213); font-weight: normal;">Let's create your website together <br> where shall we can start?</p>
+                    <br><br>
+                    <p style="font-size: 20px; color: rgb(221, 213, 213); font-weight: lighter;">I'm Sarah Jonson and I'm a freelance Web Designer.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book.</p>
+                    <br> <a href="#" style="text-decoration: underline;color:rgb(221, 213, 213); ">Read More</a>
+                </div>
+
+                <div class="col-5 ">
+                    <img class="rounded-circle border " src="images/me.jpg" alt="Resim neredehehe" style="margin:100px 0 0 100px; height: 350px; width: 350px;;">
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="container-fluid h-75 pl-5 " style=" padding-top:100px; ;background: rgb(26, 25, 25)">
+        <div class="container">
+            <div class="row mb-2">
+                <div style="background:white;width:50px;height:2px;margin-top:11px;"></div> <span style="font-weight: lighter" class="text-white"> &nbsp;&nbsp; W H A T &nbsp;I &nbsp;O F F E R</span>
+            </div>
+
+            <div class="row">
+                <div class="col">
+
+                    <span style="font-size: 48px; color: white;">
+                                <i class="far fa-clone"></i>
+                              </span><br><br>
+                    <p style="color: white;">BRANDİNG</p>
+                    <p style="color: white;">Branding is visually stunning designs that will leave you speechless</p>
+
+                </div>
+
+                <div class="col ">
+
+                    <span style="font-size: 48px; color: white;">
+                                <i class="far fa-building"></i>
+                              </span><br><br>
+                    <p style="color: white;">BRANDİNG</p>
+                    <p style="color: white;">Branding is visually stunning designs that will leave you speechless</p>
+                </div>
+
+                <div class="col ">
+
+                    <span style="font-size: 48px; color: white;">
+                            <i class="fas fa-chart-pie"></i>
+                              </span><br><br>
+                    <p style="color: white;">BRANDİNG</p>
+                    <p style="color: white;">Branding is visually stunning designs that will leave you speechless</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid pt-5" style="background: black; height: 1700px;">
+        <div class="container pt-5">
+            <div class="row mb-3">
+                <div style="background:white;width:50px;height:2px;margin-top:11px;"></div> <span class="text-white" style="font-weight: lighter"> &nbsp;&nbsp; F E A T U R E D  &nbsp;W O R K S</span>
+            </div>
+            <div class="row mb-4">
+
+                <div class=" col-6 col-md mr-3 resim " data-toggle="tooltip" title="hooraaay" style="height: 680px; background: url(images/1.jpg); background-size: cover; background-repeat: no-repeat; ">
+
+                </div>
+
+                <div class="col-6 col-md ml-3 resim " style="height: 700px; background: url(http://themedemos.download/vlack/vlaca/assets/images/work/2.jpg); background-size: cover; background-repeat: no-repeat; ">
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-6 col-md mr-3 resim " style="height: 680px; background: url(http://themedemos.download/vlack/vlaca/assets/images/work/3.jpg); background-size: cover; background-repeat: no-repeat; ">
+
+                </div>
+                <div class="col-6 col-md ml-3 resim " style="height: 700px; background: url(http://themedemos.download/vlack/vlaca/assets/images/work/4.jpg); background-size: cover; background-repeat: no-repeat; ">
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container-fluid " style="background: rgb(26, 25, 25); height: 346px; ">
+
+        <div class="row ">
+            <div class="col-12 " style="height: 346px; ">
+
+                <div id="carouselExampleIndicators " class="carousel slide " data-ride="carousel ">
+                    <div class="row ">
+                        <div class="col-12 " style="height: 346px; ">
+                            <div class=" carousel-inner ">
+                                <div class="carousel-item active text-center " style="margin-top:130px; ">
+                                    <p class="text-white "> Branding is visually stunning designs that will leave you speechless</p>
+                                    <p class=" text-white " style="font-weight: 600;font-size: large "> Mark juckabarg</p>
+                                </div>
+                                <div class="carousel-item text-center " style="margin-top:130px; ">
+                                    <p class="text-white ">Branding is visually stunning designs that will leave you speechless</p>
+                                    <p class="bolder text-white " style="font-weight: 600;font-size: large "> Mark juckabarg</p>
+                                </div>
+                                <div class="carousel-item text-center " style="margin-top:130px; ">
+                                    <p class="text-white ">Branding is visually stunning designs that will leave you speechless</p>
+                                    <p class="bolder text-white " style="font-weight: 600;font-size: large "> Mark juckabarg</p>
+                                </div>
+
+                            </div>
+                            <a class="carousel-control-prev " href="#carouselExampleIndicators " role="button " data-slide="prev "></a>
+                            <a class="carousel-control-next " href="#carouselExampleIndicators " role="button " data-slide="next "></a>
+                            <ol class="carousel-indicators ">
+                                <li data-target="#carouselExampleIndicators " data-slide-to="0 " class="active "></li>
+                                <li data-target="#carouselExampleIndicators " data-slide-to="1 "></li>
+                                <li data-target="#carouselExampleIndicators " data-slide-to="2 "></li>
+
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid " style="background: black; height: 972px; ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-12 " style="margin-top:90px; ">
+                    <div style="background:white;width:50px;height:2px;margin-top:10px; float: left;"></div> <span class="text-white" style="float: left; font-weight: lighter"> &nbsp;&nbsp; S A Y &nbsp;H E L L O</span>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-4 ">
+                    <span style="font-size: 48px; color: white;">
+                                <i class="fa fa-map"></i>
+                              </span><br><br><br>
+                    <p class="text-white ">MELBORN,AUSTRALIA</p>
+                    <p class="text-white " style="font-weight: bold ">+61 1900 654 321</p>
+                    <p class="text-white ">12988</p>
+                    <p class="text-white ">Austra feradation,australia 20182</p><br><br>
+                    <a class="text-white " href="# " style="text-decoration: underline; ">View in map</a>
+
+
+                </div>
+
+                <div class="col-8 ">
+                    <form>
+                        <div class="form-group ">
+                            <input type="text " class="form-control mr-4 " placeholder="Name " style="border-color: black; border-bottom-color: white; background: black; float:left; width: 350px ">
+                            <input type="email " class="form-control " placeholder="Email " style="border-color: black; border-bottom-color: white; background: black; float:left; width: 350px ">
+
+                            <textarea class="mt-5 " name="area " placeholder="Your Message " cols="100 " rows="6 " style="color: white; border-color: black; border-bottom-color: white; background: black; "></textarea>
+                            <br><br>
+                            <button type="submit " class="btn bg-grey rounded-0 " style="width: 150px; height: 40px; ">Submit Now</button>
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+            </div>
+
+            <div class="row text-white " style="margin-top: 290px; ">
+                <div class="col-9 ">
+                    <p>For project enquires <br> or say ‘Hello’ – <a href="# " class="text-white " style="text-decoration: underline; ">hey@websitename.com</a></p>
+                </div>
+                <div class="col-3 mt-4 " style="font-size: small ">
+                    <p>©Copyright Vlaca. All-Right Reserved</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
